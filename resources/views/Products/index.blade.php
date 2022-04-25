@@ -30,7 +30,7 @@
                         </div>
                         @endif
                         <div class="card-header">
-                                    <h4 style="float:left">ဂဏာန်းများ</h4>
+                                    <h4 style="float:left">နံပါတ်များ</h4>
                                     <a href="" class="btn btn-dark" style="float:right" data-toggle="modal" data-target="#addproduct">
                                     <i class="fa fa-plus"></i>အသစ်ထည့်ရန်</a>
                         </div>
@@ -41,7 +41,7 @@
                                                 
                                                     <th>နံပါတ်</th>
                                                     <th>ကန့်သက်</th>
-                                                    
+                                                    <th>အမျိုးအစား</th>
                                                     <th>လုပ်ဆာင်ချက်များ</th>
                                                 </tr>
                                             </thead>
@@ -50,7 +50,7 @@
                                                     <tr>
                                                         <td>{{$product->num}}</td>
                                                         <td>{{$product->limit}}</td>
-                                                        
+                                                        <td>{{$product->category_id}}</td>
                                                        
                                                         <td>
                                                             <div class="btn-group">

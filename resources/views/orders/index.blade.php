@@ -22,130 +22,41 @@
                <div class="col-md-4">
                    <div class="card">
                         <div class="card-header">
-                                <h4 style="float:left">စာရင်းထည့်ရန်</h4>
-                                                
+                                <h4 style="float:left">စာရင်းထည့်ရန်</h4>                           
                         </div>
-                   </div>
                    
-                    <div class="card-body">
-                        <form action="{{ route('orders.store')}}" method="POST">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="form-group mt-3 col-md-4">
-                                                <select name="period"  class="form-control">
-                                                    <option value="" class="form-control">အချိန်ရွေးရန်</option>
-                                                    
-                                                    <option value="morning" class="form-control">မနက်</option>
-                                                    <option value="evening" class="form-control">ညနေ</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group mt-3 col-md-8">
-                                                <select name="customer_id"  class="form-control">
-                                                    <option value="" class="form-control">ဝယ်သူရွေးရန် *</option>
-                                                    @foreach( $customers as $customer)
-                                                            <option value="{{ $customer->id }}" class="form-control">
-                                                            {{ $customer->name}}
-                                                    </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row">
-                                            <div class="form-check col-md-3">
-                                                <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    ဒဲ့
-                                                </label>
-                                            </div>
-                                            <div class="form-check col-md-3">
-                                                <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    ရောင်း(ဝ်)
-                                                </label>
-                                            </div>
-                                            <div class="form-check col-md-3">
-                                                <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    ပတ်
-                                                </label>
-                                            </div>
-                                            <div class="form-check col-md-3">
-                                                <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    ပါဝါ
-                                                </label>
-                                            </div>
-                                    
+                   
+                         <div class="card-body">
+                                <form action="{{ route('orders.store')}}" method="POST">
+                                            @csrf
                                             <div class="row">
-                                            
-                                                <div class="form-check col-md-2">
-                                                    <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        ညီကို
-                                                    </label>
+                                                <div class="form-group mt-3 col-md-4">
+                                                    <select name="period"  class="form-control" required>
+                                                        <option value="" class="form-control">အချိန်ရွေးရန် *</option>
+                                                        
+                                                        <option value="morning" class="form-control">မနက်</option>
+                                                        <option value="evening" class="form-control">ညနေ</option>
+                                                    </select>
                                                 </div>
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        နက္ခတ်
-                                                    </label>
-                                                </div>
-                                                <div class="form-check col-md-3">
-                                                    <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        စီးရီး(ထိပ်စီး)
-                                                    </label>
-                                                </div>
-                                                <div class="form-check col-md-4">
-                                                    <input class="form-check-input" type="radio" name="direct" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        စီးရီး(နောက်ပိတ်)
-                                                    </label>
+                                                <div class="form-group mt-3 col-md-8">
+                                                    <select name="customer_id"  class="form-control" required>
+                                                        <option value="" class="form-control">ဝယ်သူရွေးရန် *</option>
+                                                        @foreach( $customers as $customer)
+                                                                <option value="{{ $customer->id }}" class="form-control">
+                                                                {{ $customer->name}}
+                                                        </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                    
-                                    <table class="table table-left mt-3">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>နံပါတ် *</th>
-                                                <th>ကြေး *</th>
-                                                <th><a href="" class="btn btn-sm btn-success add_more "><i class="fas fa-plus"></i></a></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="addMoreProduct">
-                                            <tr> 
-                                                <td>1</td>
-                                                <td>
-                                                    <select name="product_id[]"  class="form-control product_id">
-                                                        <option value="" class="form-control">နံပါတ်ရွေးရန်</option>
-                                                        @foreach( $products as $product)
-                                                        <option value="{{ $product->id }}" class="form-control">
-                                                        {{ $product->num}}
-                                                        </option>
                                             
-                                                        @endforeach
                                             
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                <div class="form-group">
-                                    
-                                                        <input type="text" name="price[]" class="form-control price"> 
-                                                </div>
-                                                </td>
-                                                <td><a href="" class="btn btn-sm btn-danger delete"><i class="fas fa-times"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>                       
-                                        <div class="modal-footer">
-                                            <button class="btn btn-dark btn-block">Save</button>
-                                        </div> 
-                        </form>
+                                        @livewire('orders')
+                                                                    
+                                            
+                            </form>
+                        </div>
                     </div>
-                    
                 </div> 
                 <div class="col-md-8">
                       
@@ -536,10 +447,7 @@
                                 </div>
                             </div>
                 </div>
-                       <div class="card-body">
-                           
-                          
-                        </div>
+                    
                 </div>
             </div>
         </div>
@@ -548,6 +456,7 @@
 
 @section('script')
 <script>
+    
        $('.add_more').on('click',function(e){
                 e.preventDefault();
                 var product =$('.product_id').html();

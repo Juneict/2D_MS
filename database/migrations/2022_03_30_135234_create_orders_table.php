@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('product_id');
             $table->string('period');
             $table->integer('price');
-            $table->timestamps();
+            $table->timestamps()->useCurrent();
         });
     }
 

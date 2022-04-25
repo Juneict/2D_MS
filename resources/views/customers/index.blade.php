@@ -56,7 +56,7 @@
                                                             <div class="btn-group">
                                                                 <a href="" data-toggle="modal" data-target="#editcustomer{{$customer->id}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> ပြင်ရန်</a>
                                                                 <a href="" data-toggle="modal" data-target="#deletecustomer{{$customer->id}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> ဖျက်ရန်</a>
-                                                                <a href="" data-toggle="modal" data-target="#addprice{{$customer->id}}" class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> အသေးစိတ်ကြည့်ရန်</a>
+                                                                
                                                             </div>
                                                         </td>
                                                     </tr>

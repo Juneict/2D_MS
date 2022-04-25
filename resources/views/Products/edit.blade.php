@@ -20,7 +20,16 @@
                                          <label for="">ကန့်သက်ချက်</label>
                                          <input type="text" name="limit" class="form-control"  value="{{$product->limit}}"> 
                                        </div>
-                                                                     
+                                       <div class="form-group">
+                                        <select name="category_id"  class="form-control">
+                                            <option value="" class="form-control">အမျိုးအစားရွှေးရန်</option>
+                                                @foreach($categories as $category)
+                                                    <option value="{{$category->id}}" class="form-control">
+                                                            {{$category->cat_name}}
+                                                    </option>
+                                                @endforeach                                                    
+                                        </select> 
+                                       </div>                             
                                        <div class="modal-footer">
                                         <button class="btn btn-warning btn-block">Update</button>
                                        </div>

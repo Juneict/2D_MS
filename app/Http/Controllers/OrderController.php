@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Order_Detail;
 use Illuminate\Http\Request;
@@ -25,10 +26,11 @@ class OrderController extends Controller
        $evening_total =Order::select('price')->where('period','evening')->whereDate('created_at', Carbon::today())->get();
        $orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','morning')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
        $evening_orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','evening')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
-       $products = Product::all();
+       $products = Product::all();  
        $customers = Customer::all();
-  
-        return view('orders.index',compact('products','orders','customers','total','evening_orders','evening_total'));
+       $categories =Category::all();
+
+        return view('orders.index',compact('products','orders','customers','total','evening_orders','evening_total','categories'));
     }
 
     /**
@@ -49,7 +51,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {   
-    
+      
         $data=array();
         for($i =0;$i<count($request->product_id);$i++){
             $tmp =[
