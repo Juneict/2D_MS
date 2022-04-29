@@ -30,50 +30,103 @@
                         </div>
                         @endif
                         <div class="card-header">
-                                    <h4 style="float:left">နံပါတ်များ</h4>
-                                    <a href="" class="btn btn-dark" style="float:right" data-toggle="modal" data-target="#addproduct">
-                                    <i class="fa fa-plus"></i>အသစ်ထည့်ရန်</a>
+                                    <h4 style="float:left">အသုံးပြုနည်း</h4>
+                                   
                         </div>
                         <div class="card-body">
                                 <table id="data" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
                                                 
-                                                    <th>နံပါတ်</th>
-                                                    <th>ကန့်သက်</th>
-                                                    <th>အမျိုးအစား</th>
-                                                    <th>လုပ်ဆာင်ချက်များ</th>
+                                                    <th>အကွက်အမျိုးအမည်</th>
+                                                    <th>ရိုတ်ရမည့်ပုံစံ</th>
+                                                    <th>ရှင်းလင်းချက်</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($products as $product)
-                                                    <tr>
-                                                        <td>{{$product->num}}</td>
-                                                        <td>{{$product->limit}}</td>
-                                                        <td>{{$product->category_id}}</td>
-                                                       
-                                                        <td>
-                                                            <div class="btn-group">
-                                                                <a href="" data-toggle="modal" data-target="#editproduct{{$product->id}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> ပြင်ရန်</a>
-                                                                <a href="" data-toggle="modal" data-target="#deleteproduct{{$product->id}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> ဖျက်ရန်</a>
-                                                                
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <!-- Modal of add section -->
-                                                    @include('Products.add')                 
-
-                                                    <!-- Modal of edit section -->
-                                                    @include('Products.edit')
-                                                                
-                                                    <!-- Modal of delete section -->
-                                                    @include('Products.delete')
-                                                    <!-- end modal section -->
-                                                   
-                                                @endforeach
-                                               
+                                                <tr>
+                                                    <td>တစ်ကွက်တည်း</td>
+                                                    <td>43</td>
+                                                    <td>43 တစ်ကွက်တည်း </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ရောင်း(ဝ်)</td>
+                                                    <td>43R</td>
+                                                    <td>43 +34 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ဘရိတ်</td>
+                                                    <td>4B</td>
+                                                    <td>4 ဘရိတ်</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ပါဝါ</td>
+                                                    <td>P</td>
+                                                    <td>ပါဝါ </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ဘရိတ်(ရောင်း(ဝ်))</td>
+                                                    <td>4E</td>
+                                                    <td>4  ဘရိတ်(ရောင်း(ဝ်))</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ပါဝါ</td>
+                                                    <td>W</td>
+                                                    <td>ပါဝါ နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>နက္ခတ်</td>
+                                                    <td>N</td>
+                                                    <td> နက္ခတ် နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ညီကို</td>
+                                                    <td>X</td>
+                                                    <td>ညီကို နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>အပူး</td>
+                                                    <td>A</td>
+                                                    <td>အပူး နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ဆယ်ပြည့်</td>
+                                                    <td>S</td>
+                                                    <td>ဆယ်ပြည့် နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>စုံစုံ</td>
+                                                    <td>++</td>
+                                                    <td>စုံစုံ နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>မမ</td>
+                                                    <td>--</td>
+                                                    <td>မမ နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>စုံမ</td>
+                                                    <td>+-</td>
+                                                    <td>စုံမ နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>မစုံ</td>
+                                                    <td>-+</td>
+                                                    <td>မစုံ နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ထိပ်စီး</td>
+                                                    <td>1F</td>
+                                                    <td>1ထိပ် နံပါတ်များ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>နောက်ပိတ်</td>
+                                                    <td>1P</td>
+                                                    <td>1 နောက်ပိတ် နံပါတ်များ</td>
+                                                </tr>
                                             </tbody>
-                                           {{$products->links()}} 
+                                           
                                 </table>
                                     
                         </div>

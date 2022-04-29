@@ -1,13 +1,13 @@
 <div class="form-check col-md-12 ">
-<select name=""  class="form-control" wire:model="selectedCategory">
+<!-- <select name=""  class="form-control" wire:model="selectedCategory">
                 <option value="" class="form-control">အမျိုးအစားရွှေးရန် </option>
                     @foreach( $categories as $category)
                     <option value="{{ $category->id }}" class="form-control">
                     {{ $category->cat_name}}
                 </option>
             @endforeach
-</select>  
-@if(!is_null($products))
+</select>   -->
+<!-- @if(!is_null($products))
                     <td>
                         <select name="product_id[]"  class="form-control product_id mt-3" wire:model="selectedProduct">
                             <option value="" class="form-control">နံပါတ်ရွေးရန်</option>
@@ -30,7 +30,7 @@
                         </select>
                     </td>
                   
-@endif
+@endif -->
 
                     
 
@@ -48,7 +48,8 @@
                     
             <tr> 
                 <td>1</td>
-                    <td>{{$selectedProduct}}
+                    <td><input type="text" name="product_id[]" class="product_id form-control">
+    
                     </td>
                     <td>
                         <div class="form-group">

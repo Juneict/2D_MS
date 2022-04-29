@@ -14,7 +14,7 @@
                                                             
                                                                     
                             <td>{{$data->customers->name}}</td>
-                            <td>{{$data->products->num}}</td>
+                            <td>{{$data->product_id}}</td>
                             <td>{{$data->price}}</td>
                                                             
                          </tr>

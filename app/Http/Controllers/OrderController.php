@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
@@ -43,30 +44,144 @@ class OrderController extends Controller
         //
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {   
-      
+        $orderController = new OrderController();
+        $twod = new Twod();
+
+        $alphas = range('A', 'Z');
+
+        $obj = (Object)[];
+        $obj->period = $request->period;
+        $obj->customer_id = $request->customer_id;
+        $obj->total_products = [];
+        $obj->total_prices = [];
+
+        $products = $specific_prices = array();
+        for($i = 0; $i < count($request->product_id); $i++){
+            $product_id = strtoupper($request->product_id[$i]);
+
+            preg_match_all("/[A-Z]+|\d+|[#$%^&*()+=\-\[\]\';,.\/{}|:<>?~]+/", $product_id, $matches_arr);
+            $matches = $matches_arr[0];
+
+            switch($matches){
+
+                // Round - Reverse
+                case in_array('R', $matches) == TRUE:
+                    $reversed_prod = $twod->reverse_string($matches[0])->getData()->data;
+                    $products = [$matches[0], $reversed_prod];
+                    break;
+
+                // Brake
+                case in_array('B', $matches) == TRUE:
+                    $products = $twod->break_round($matches[0])->getData()->data;
+                    break;
+
+                // Brake Round
+                case in_array('E', $matches) == TRUE:
+                    $products = $twod->break_round($matches[0])->getData()->data;
+                    break;
+
+                // Power
+                case in_array('W', $matches) == TRUE:
+                    $products = $twod->power()->getData()->data;
+                    break;
+
+                // NatKhat
+                case in_array('N', $matches) == TRUE:
+                    $products = $twod->natkhat()->getData()->data;
+                    break;
+
+                // NyiKo
+                case in_array('X', $matches) == TRUE:
+                    $products = $twod->nyiko()->getData()->data;
+                    break;
+
+                // Apuu
+                case in_array('A', $matches) == TRUE:
+                    $products = $twod->apuu()->getData()->data;
+                    break;
+
+                // Salpyae
+                case in_array('S', $matches) == TRUE:
+                    $products = $twod->salpyae()->getData()->data;
+                    break;
+
+                // Htate See
+                case in_array('F', $matches) == TRUE:
+                    $products = $twod->htatesee($matches[0])->getData()->data;
+                    break;
+
+                // Nauk Pate
+                case in_array('P', $matches) == TRUE:
+                    $products = $twod->naukpate($matches[0])->getData()->data;
+                    break;
+
+                // Even
+                case in_array('++', $matches) == TRUE:
+                    $products = $twod->even()->getData()->data;
+                    break;
+
+                // Odd
+                case in_array('--', $matches) == TRUE:
+                    $products = $twod->odd()->getData()->data;
+                    break;
+
+                // Even Odd
+                case in_array('+-', $matches) == TRUE:
+                    $products = $twod->evenodd()->getData()->data;
+                    break;
+
+                // Odd Even 
+                case in_array('-+', $matches) == TRUE:
+                    $products = $twod->oddeven()->getData()->data;
+                    break;
+
+                // Numbers
+                case count($matches) == 1 && in_array($matches[0], $alphas) == FALSE:
+                    $products = [$request->product_id[$i]];
+                    break;
+
+                // Ignore Case
+                default:
+                    $products = null;
+            }
+
+            if(is_null($products)){
+                continue;
+            }
+
+            $specific_prices = array_fill(0, count($products), $request->price[$i]);
+            $obj->total_products = array_merge($obj->total_products, $products);
+            $obj->total_prices = array_merge($obj->total_prices, $specific_prices);
+        }
+
+        $res = $orderController->insertDB($obj);
+        return redirect()->back()->with('Success','Orders created successfully');
+    }
+
+    function insertDB($obj){
+
         $data=array();
-        for($i =0;$i<count($request->product_id);$i++){
+        for($i =0;$i<count($obj->total_products);$i++){
             $tmp =[
-                'customer_id'=>$request->customer_id,
-                'product_id'=>$request->product_id[$i],
-                'period'=>$request->period,
-                'price'=>$request->price[$i],
+                'customer_id'=>$obj->customer_id,
+                'product_id'=>$obj->total_products[$i],
+                'period'=>$obj->period,
+                'price'=>$obj->total_prices[$i],
             ];
             array_push($data,$tmp);
          }
          $orders =Order::insert($data);
-    
-      return redirect()->back()->with('Success','Orders created successfully');
-       
-        
+         return $orders;
     }
 
     /**

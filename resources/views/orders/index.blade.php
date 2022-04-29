@@ -38,7 +38,7 @@
                                                         <option value="evening" class="form-control">ညနေ</option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group mt-3 col-md-8">
+                                                <div class="form-group mt-3     col-md-8">
                                                     <select name="customer_id"  class="form-control" required>
                                                         <option value="" class="form-control">ဝယ်သူရွေးရန် *</option>
                                                         @foreach( $customers as $customer)
@@ -81,7 +81,7 @@
                                                         @foreach($orders->slice(0,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -99,7 +99,7 @@
                                                         @foreach($orders->slice(10,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -117,7 +117,7 @@
                                                         @foreach($orders->slice(20,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -135,7 +135,7 @@
                                                         @foreach($orders->slice(30,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -153,7 +153,7 @@
                                                         @foreach($orders->slice(40,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -171,7 +171,7 @@
                                                         @foreach($orders->slice(50,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -189,7 +189,7 @@
                                                         @foreach($orders->slice(60,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -207,7 +207,7 @@
                                                         @foreach($orders->slice(70,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -225,7 +225,7 @@
                                                         @foreach($orders->slice(80,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -243,7 +243,7 @@
                                                         @foreach($orders->slice(90,10) as $order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->products->num}}  
+                                                                {{$order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$order->total_price}}</span> 
@@ -255,6 +255,7 @@
                                                     </tbody>
                                                 </table>
                                         </div>
+                                        
                                     </div>
                                 </div>
                     <!-- morning data end -->
@@ -268,7 +269,7 @@
                                                         @foreach($evening_orders->slice(0,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -286,7 +287,7 @@
                                                         @foreach($evening_orders->slice(10,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -304,7 +305,7 @@
                                                         @foreach($evening_orders->slice(20,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -322,7 +323,7 @@
                                                         @foreach($evening_orders->slice(30,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -340,7 +341,7 @@
                                                         @foreach($evening_orders->slice(40,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -358,7 +359,7 @@
                                                         @foreach($evening_orders->slice(50,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$order->evening_order->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -376,7 +377,7 @@
                                                         @foreach($evening_orders->slice(60,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -394,7 +395,7 @@
                                                         @foreach($evening_orders->slice(70,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -412,7 +413,7 @@
                                                         @foreach($evening_orders->slice(80,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -430,7 +431,7 @@
                                                         @foreach($evening_orders->slice(90,10) as $evening_order)
                                                             <tr>
                                                                 <td>
-                                                                {{$evening_order->products->num}}  
+                                                                {{$evening_order->product_id}}  
                                                                 </td>
                                                                 <td>
                                                                 <span class="badge badge-success">{{$evening_order->total_price}}</span> 
@@ -462,7 +463,7 @@
                 var product =$('.product_id').html();
                 var numberofrow =($('.addMoreProduct tr').length - 0) + 1;
                 var tr = '<tr><td class="no">'+ numberofrow  + '</td>'+
-                              '<td><select class="form-control product_id" name="product_id[]">'+product+'</select></td>'+
+                              '<td><input type="text" class="form-control product_id" name="product_id[]">'+product+'</input></td>'+
                               '<td><input type="number" name="price[]" class="form-control price"></td>'+
                              '<td><a href="" class="btn btn-sm btn-danger delete"><i class="fas fa-times"></i></a></td>'
                  $('.addMoreProduct').append(tr);
@@ -471,5 +472,17 @@
                 e.preventDefault();
                $(this).parent().parent().remove();
            })
+$(function() {
+  
+  $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+    localStorage.setItem('lastTab', $(this).attr('href'));
+  });
+  var lastTab = localStorage.getItem('lastTab');
+  
+  if (lastTab) {
+    $('[href="' + lastTab + '"]').tab('show');
+  }
+  
+});
 </script>
 @endsection
