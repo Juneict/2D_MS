@@ -218,7 +218,9 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $orders = Order::find($id);
+        $orders->update($request->all());
+        return back()->with('Success',"User updated successfully");
     }
 
     /**
@@ -229,7 +231,9 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-       
+        $orders = Order::find($id);
+        $orders->delete();
+        return back()->with('error',"Order deleted successfully");
     }
     public function deletetable(){
        

@@ -8,8 +8,8 @@
             <div class="card">
            
                 <div class="card-header"><marquee behavior="" direction=""><h4>2D Management System မှ ကြိုဆိုပါသည်။</h4> </marquee>  </div>
+
             </div>
         </div>
-    </div>
 </div>
 @endsection

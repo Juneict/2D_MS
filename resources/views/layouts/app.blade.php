@@ -68,7 +68,7 @@
                     <ul class="navbar-nav me-auto">
                             @include('layouts.includes.nav')
                     </ul>
-
+                
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

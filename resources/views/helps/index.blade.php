@@ -19,16 +19,7 @@
             <div class="row">
                <div class="col-md-12 float-right">
                     <div class="card">
-                         @if (session('Success'))
-                        <div class="alert alert-success">
-                            {{ session('Success') }}
-                        </div>
-                        @endif
-                        @if (session('Error'))
-                        <div class="alert alert-danger">
-                            {{ session('Error') }}
-                        </div>
-                        @endif
+                      
                         <div class="card-header">
                                     <h4 style="float:left">အသုံးပြုနည်း</h4>
                                    
