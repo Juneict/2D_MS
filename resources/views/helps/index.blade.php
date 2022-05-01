@@ -61,11 +61,6 @@
                                                     <td>4 ဘရိတ်</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>ပါဝါ</td>
-                                                    <td>P</td>
-                                                    <td>ပါဝါ </td>
-                                                </tr>
-                                                <tr>
                                                     <td>ဘရိတ်(ရောင်း(ဝ်))</td>
                                                     <td>4E</td>
                                                     <td>4  ဘရိတ်(ရောင်း(ဝ်))</td>
@@ -132,7 +127,7 @@
                         </div>
                           
                     </div>
-                        @include('Products.create')
+             
                         
                 </div>
               

@@ -68,10 +68,11 @@
     <div class="morning">
         <div class="card-header">မနက် စာရင်း</div>
         @foreach($customers as $customer)
-            <div class="col-lg-3 col-6 float-right">
+            <div class="col-lg-3 col-6 float-left">
                         <div class="card-box bg-orange">
                             <div class="inner">
                                 <h3> {{$customer->total_price}} </h3>
+                               
                                 <p> {{$customer->customers->name}} </p>
                             </div>
                             <div class="icon">
@@ -85,7 +86,7 @@
     <div class="morning">
         <div class="card-header">ညနေ စာရင်း</div>
         @foreach($eveningcustomers as $customer)
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6 float-left">
                         <div class="card-box bg-orange">
                             <div class="inner">
                                 <h3> {{$customer->total_price}} </h3>

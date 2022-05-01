@@ -23,15 +23,18 @@ class OrderController extends Controller
     
     public function index()
     {
+        //total price for morining//
        $total =Order::select('price')->where('period','morning')->whereDate('created_at', Carbon::today())->get();
+       //total price for evening//
        $evening_total =Order::select('price')->where('period','evening')->whereDate('created_at', Carbon::today())->get();
+       //ordernumbers for morining//
        $orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','morning')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
+       //ordernumbers for evening//
        $evening_orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','evening')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
-       $products = Product::all();  
+     
        $customers = Customer::all();
-       $categories =Category::all();
 
-        return view('orders.index',compact('products','orders','customers','total','evening_orders','evening_total','categories'));
+        return view('orders.index',compact('orders','customers','total','evening_orders','evening_total'));
     }
 
     /**
@@ -226,17 +229,14 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
     }
-    public function orderlist(){
-    
-        $orders = Order::all();
-        
-        return view('orders.orderlist',compact('orders'));
+    public function deletetable(){
+       
+        // $orders = Order::all();
+        DB::table('orders')->truncate();
+        return redirect()->back()->with('Success','Orders deleted successfully');
     }
-    public function reverse_string() {
-        $rnumber = new Twod();
-        return $rnumber->reverse_string(32);
-    }
+     
    
 }

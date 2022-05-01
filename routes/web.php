@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['middleware'=>['auth']],function(){
-    Route::resource('/products',App\Http\Controllers\ProductController::class);
+    Route::resource('/helps',App\Http\Controllers\ProductController::class);
     Route::resource('/customers',App\Http\Controllers\CustomerController::class);
     Route::resource('/orders',App\Http\Controllers\OrderController::class);
+    Route::get('/deletetable',[App\Http\Controllers\OrderController::class, 'deletetable'])->name('deletetable');
     Route::resource('/users',App\Http\Controllers\UserController::class);
-    Route::get('/products/{product}/addPrice', [App\Http\Controllers\ProductController::class, 'addPrice'])->name('addPrice');
     Route::resource('/reports', App\Http\Controllers\reportController::class);
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/reverse_string', [App\Http\Controllers\OrderController::class, 'reverse_string'])->name('reverse_string');

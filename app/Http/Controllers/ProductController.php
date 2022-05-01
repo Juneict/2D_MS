@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Category;
 use Illuminate\Http\Request;
 use MyanLottery\Lottery\Twod;
 
@@ -16,9 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
-        $categories =Category::all();
-        return view('Products.index',compact('products','categories'));
+      
+        return view('helps.index');
     }
 
     /**
@@ -40,16 +38,6 @@ class ProductController extends Controller
     public function store(Request $request)
     {
        
-        $products = new Product();
-        $products->num = $request->num;
-        $products->limit =$request->limit;
-        $product->category_id =$request->category_id;
-        $products->save();
-        if($products){
-            return redirect()->back()->with('Success','Products created successfully');
-        }else{
-            return redirect()->back()->with('Error','Products fail created');
-        }
     }
 
     /**
@@ -83,18 +71,7 @@ class ProductController extends Controller
      */
     public function update(Request $request,$products)
     {
-        $products = Product::find($products);
-       
-            $products->num =$request->num;
-            $products->limit =$request->limit;
-            $products->category_id =$request->category_id;
-       
-        $products->save();
-        if($products){
-            return redirect()->back()->with('Success','Products updates successfully');
-        }else{
-            return redirect()->back()->with('Error','Products fail update');
-        }
+      
     }
 
     /**
@@ -105,16 +82,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
-        return redirect()->back()->with('Error','Product Deleted Successfully');
+    
     }
     public function addPrice(Request $request,$products){
         
         
-        $products = Product::find($products);
-        
-        $products->total=$products->total+$request->total;
-        $products->save();
-        return redirect()->back()->with('Success','Price updates successfully');
+
     }
 }

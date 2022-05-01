@@ -22,10 +22,9 @@
                <div class="col-md-4">
                    <div class="card">
                         <div class="card-header">
-                                <h4 style="float:left">စာရင်းထည့်ရန်</h4>                           
+                                <h4 style="float:left">စာရင်းထည့်ရန်</h4>                          
                         </div>
-                   
-                   
+       
                          <div class="card-body">
                                 <form action="{{ route('orders.store')}}" method="POST">
                                             @csrf
@@ -49,407 +48,72 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            
-                                            
-                                        @livewire('orders')
-                                                                    
-                                            
-                            </form>
+                                            <div class="form-check col-md-12 ">                    
+                                                    <table class="table table-left mt-3">
+                                                        <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>နံပါတ် *</th>
+                                                                    <th>ကြေး *</th>
+                                                                    <th><a href="" class="btn btn-sm btn-success add_more "><i class="fas fa-plus"></i></a></th>
+                                                                </tr>
+                                                        </thead>
+                                                        <tbody class="addMoreProduct">
+                                                                        
+                                                                <tr> 
+                                                                    <td>1</td>
+                                                                        <td><input type="text" name="product_id[]" class="product_id form-control">
+                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label for="price">
+                                                                                <input type="text" name="price[]" class="form-control price"> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td><a href="" class="btn btn-sm btn-danger delete"><i class="fas fa-times"></i></a></td>
+                                                                </tr>
+                                                            
+                                                        </tbody>
+                                                    </table> 
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-dark btn-block">Save</button>                                      
+                                            </div>                
+                                </form>
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-8">
-                      
-                            
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">မနက်</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">ညနေ</button>
-                                </li>
-                                
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="card-header">စုစုပေါင်း {{$total->sum('price')}}</div>
-                    <!-- morning data start -->
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(0,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(10,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(20,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(30,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(40,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(50,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(60,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(70,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(80,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($orders->slice(90,10) as $order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        
+                <div class="col-md-8">             
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">မနက်</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">ညနေ</button>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="card-header">စုစုပေါင်း {{$total->sum('price')}}</div>
+                        <!-- morning data start -->
+                                        @include('orders.morningdata')
+                                    </div>
+                        <!-- morning data end -->
+                                    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="card-header">စုစုပေါင်း {{$evening_total->sum('price')}}</div>
+                        <!-- evening data start -->
+                                        @include('orders.eveningdata')
+                        <!-- evening data end -->
                                     </div>
                                 </div>
-                    <!-- morning data end -->
-                                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="card-header">စုစုပေါင်း {{$evening_total->sum('price')}}</div>
-                    <!-- evening data start -->
-                                    <div class="row">
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(0,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(10,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(20,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(30,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(40,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(50,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(60,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(70,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(80,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div class="col-md-1">
-                                                <table class="table">
-                                                    <tbody>
-                                                        @foreach($evening_orders->slice(90,10) as $evening_order)
-                                                            <tr>
-                                                                <td>
-                                                                {{$evening_order->product_id}}  
-                                                                </td>
-                                                                <td>
-                                                                <span class="badge badge-success">{{$evening_order->total_price}}</span> 
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                            
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                    </div>
-                    <!-- evening data end -->
-                                </div>
-                            </div>
-                </div>
+                    </div>
                     
                 </div>
+                <a href="{{ route('deletetable')}}" class="btn btn-danger" style="float:right">
+                <i class="fa fa-delete"></i>စာရင်းများ အားလုံးဖျက်ရန်</a>
             </div>
         </div>
     </div>   
@@ -457,8 +121,7 @@
 
 @section('script')
 <script>
-    
-       $('.add_more').on('click',function(e){
+      $('.add_more').on('click',function(e){
                 e.preventDefault();
                 var product =$('.product_id').html();
                 var numberofrow =($('.addMoreProduct tr').length - 0) + 1;
@@ -471,18 +134,7 @@
       $('.addMoreProduct').delegate('.delete','click',function(e){
                 e.preventDefault();
                $(this).parent().parent().remove();
-           })
-$(function() {
-  
-  $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
-    localStorage.setItem('lastTab', $(this).attr('href'));
-  });
-  var lastTab = localStorage.getItem('lastTab');
-  
-  if (lastTab) {
-    $('[href="' + lastTab + '"]').tab('show');
-  }
-  
-});
+           });
+
 </script>
 @endsection
