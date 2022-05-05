@@ -85,7 +85,7 @@ class OrderController extends Controller
 
                 // Brake
                 case in_array('B', $matches) == TRUE:
-                    $products = $twod->break_round($matches[0])->getData()->data;
+                    $products = $twod->break($matches[0])->getData()->data;
                     break;
 
                 // Brake Round

@@ -10,7 +10,7 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}</span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}} </span> 
                                                                     </td>
                                                                 </tr>
                                                                 

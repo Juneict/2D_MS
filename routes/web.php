@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\reportController;
+use App\Http\Controllers\weekreportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::resource('/users',App\Http\Controllers\UserController::class);
     Route::resource('/reports', App\Http\Controllers\reportController::class);
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/weekreports', [App\Http\Controllers\weekreportController::class, 'index'])->name('weekreport');
+    Route::get('/limits', [App\Http\Controllers\limitController::class, 'index'])->name('limit');
+    Route::get('/limits/addLimit', [App\Http\Controllers\limitController::class, 'index'])->name('addLimit');
     Route::get('/reverse_string', [App\Http\Controllers\OrderController::class, 'reverse_string'])->name('reverse_string');
 });
 

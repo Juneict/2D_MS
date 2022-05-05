@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 .card-box {
     position: relative;
     color: #fff;
@@ -100,4 +100,57 @@
             </div>
         @endforeach
     </div> 
+</div> -->
+
+<div class="row">
+        <div class="col-md-6 ">
+                    <div class="card-header">
+                        မနက်စာရင်း
+                    </div>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                
+                                <th>ဝယ်သူ</th>
+                                <th>စုစုပေါင်း</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($customers as $data)
+                            <tr>
+                                   
+                                    <td>{{$data->customers->name}}</td>
+                                    <td>{{$data->total_price}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+
+                    </table>
+        </div>
+        <div class="col-md-6 ">
+                    <div class="card-header">
+                        ညနေစာရင်း
+                    </div>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                
+                                <th>ဝယ်သူ</th>
+                                <th>စုစုပေါင်း</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($eveningcustomers as $data)
+                            <tr>
+                                  
+                                    <td>{{$data->customers->name}}</td>
+                                    <td>{{$data->total_price}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+
+                    </table>
+        </div>
 </div>

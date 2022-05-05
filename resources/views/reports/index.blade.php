@@ -24,7 +24,7 @@
                                     <button class="nav-link" id="datatwo-tab" data-bs-toggle="tab" data-bs-target="#datatwo" type="button" role="tab" aria-controls="datatwo" aria-selected="false">ညနေ အ‌ရောင်းစာရင်း</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="datathree-tab" data-bs-toggle="tab" data-bs-target="#datathree" type="button" role="tab" aria-controls="datatwo" aria-selected="false">ဝယ်သူ စုစုပေါင်းစာရင်း</button>
+                                    <button class="nav-link" id="datathree-tab" data-bs-toggle="tab" data-bs-target="#datathree" type="button" role="tab" aria-controls="datatwo" aria-selected="false">တစ်ရက်စာ စုစုပေါင်းစာရင်း</button>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -60,6 +60,6 @@
 
 @section('script')
 <script>
-     
+   
 </script>
 @endsection
