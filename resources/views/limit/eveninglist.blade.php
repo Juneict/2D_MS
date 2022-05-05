@@ -2,7 +2,7 @@
     @csrf
     <div class="form-group mt-3">
          <label for="limit">
-         <input type="text" name="limit" class="form-control price" placeholder="limit amount ရိုတ်ထည့်ရန်"> 
+         <input type="text" name="eveninglimit" class="form-control price" placeholder="limit amount ရိုတ်ထည့်ရန်"> 
         </label>
         <button class="btn btn-dark">စစ်မည်</button>
     </div>
@@ -19,9 +19,9 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $limit}} </span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $eveninglimit}} </span> 
                                                                     </td>
-                                                                    <td>{{$order->total_price - $limit}}</td>
+                                                                    <td>{{$order->total_price - $eveninglimit}}</td>
                                                                 </tr>      
                                                                 
                                                             @endforeach
@@ -37,9 +37,9 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $limit}} </span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $eveninglimit}} </span> 
                                                                     </td>
-                                                                    <td>{{$order->total_price - $limit}}</td>
+                                                                    <td>{{$order->total_price - $eveninglimit}}</td>
                                                                 </tr>      
                                                                 
                                                             @endforeach
@@ -55,9 +55,9 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $limit}} </span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $eveninglimit}} </span> 
                                                                     </td>
-                                                                    <td>{{$order->total_price - $limit}}</td>
+                                                                    <td>{{$order->total_price - $eveninglimit}}</td>
                                                                 </tr>      
                                                                 
                                                             @endforeach
@@ -73,9 +73,9 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $limit}} </span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $eveninglimit}} </span> 
                                                                     </td>
-                                                                    <td>{{$order->total_price - $limit}}</td>
+                                                                    <td>{{$order->total_price - $eveninglimit}}</td>
                                                                 </tr>      
                                                                 
                                                             @endforeach
@@ -91,9 +91,9 @@
                                                                     {{$order->product_id}}  
                                                                     </td>
                                                                     <td>
-                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $limit}} </span> 
+                                                                    <span class="badge badge-success">{{$order->total_price}}-{{ $eveninglimit}} </span> 
                                                                     </td>
-                                                                    <td>{{$order->total_price - $limit}}</td>
+                                                                    <td>{{$order->total_price - $eveninglimit}}</td>
                                                                 </tr>      
                                                                 
                                                             @endforeach

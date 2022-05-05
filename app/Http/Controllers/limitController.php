@@ -11,10 +11,11 @@ class limitController extends Controller
 {
     public function index(Request $request){
         $limit = $request->limit;
+        $eveninglimit = $request->eveninglimit;
         $orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','morning')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
         //ordernumbers for evening//
         $evening_orders=Order::select('product_id',DB::raw('sum(price) as total_price'))->where('period','evening')->whereDate('created_at',Carbon::today())->groupBy('orders.product_id')->get();
-        return view('limit.index',compact('orders','evening_orders','limit'));
+        return view('limit.index',compact('orders','evening_orders','limit','eveninglimit'));
     }
     
 }
