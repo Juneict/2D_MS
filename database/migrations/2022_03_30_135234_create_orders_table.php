@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('customer_id');
-            $table->integer('product_id');
+            $table->string('product_id');
             $table->string('period');
             $table->integer('price');
-            $table->timestamps()->useCurrent();
+            $table->timestamps();
         });
     }
 
